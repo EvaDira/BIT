@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import './App.scss';
 import Clients from './Components/clients';
 import Create from './Components/create';
-import { crudCreate, crudDelete, crudRead, crudUpdate } from './Utilities/localStorage';
 import { bank } from './Components/icon';
 import Messages from './Components/messages';
 import { v4 as uuidv4 } from 'uuid';
@@ -87,8 +86,12 @@ function App() {
           </div>
 
         </div>
-
+        <div className='col-4 p-4'>
+          <Stats data={data} />
+          <Create setCreateData={setCreateData} msg={msg} />
+        </div>
       </div>
+
       <Messages messages={messages} />
 
     </>
